@@ -14,7 +14,12 @@ type Data = {
 };
 
 const TableExample = () => {
-  const createData = (name: string, lastName: string, age: number, work: string): Data => {
+  const createData = (
+    name: string,
+    lastName: string,
+    age: number,
+    work: string
+  ): Data => {
     return { name, lastName, age, work };
   };
 
@@ -23,6 +28,7 @@ const TableExample = () => {
     createData("Petras", "Petraitis", 30, "Projectionist"),
     createData("Kastytis", "Melynas", 40, "Cigarette"),
   ];
+
   return (
     <TableContainer component={Paper} sx={{ width: 650, m: 5 }}>
       <Table sx={{ minWidth: 650 }}>
@@ -36,7 +42,10 @@ const TableExample = () => {
         </TableHead>
         <TableBody>
           {rows.map((row, index) => (
-            <TableRow key={index} sx={{ "&:last-child td, &:last-child th": { border: 0 } }}>
+            <TableRow
+              key={index}
+              sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+            >
               <TableCell component="th" scope="row" align="right">
                 {row.name}
               </TableCell>
